@@ -11,7 +11,7 @@ import {
     headTextAnimation,
     slideAnimation
  } from '../config/motion'
-import Content from '../components/Content'
+import Content from '../components/Offers'
 
 const Hero = () => {
     const snap = useSnapshot(state);
@@ -26,8 +26,8 @@ const Hero = () => {
                 </motion.div>
             </motion.div>
 
-            <motion.div {...headContentAnimation}>
-                    <p className='max-w-md mb-2 mt-[50px] font-normal text-gray-600'>
+            <motion.div {...headContentAnimation} className=''>
+                    <p className='max-w-md mb-2 mt-20 font-normal text-gray-600'>
                         Design your own Dress and  <strong> ORDER IT. </strong>
                     </p>
 
@@ -37,7 +37,7 @@ const Hero = () => {
                         handleClick={() => state.intro = false}
                         CustomStyles='w-fit px-4 py-2.5 font-bold text-sm'
                     />
-                </motion.div>
+              </motion.div>
         </motion.section>
       )}
     </AnimatePresence>
