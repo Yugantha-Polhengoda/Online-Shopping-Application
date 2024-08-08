@@ -4,9 +4,9 @@ import Trending2 from "../assets/Trending2.png"
 
 const Trending = () => {
   return (
-    <div className='items-center justify-center pb-96 text-center'>
+    <div className='items-center justify-center pb-20 text-center'>
       <legend data-wow-delay="100ms">Trending & New</legend>
-      <hr className='w-3/4 mx-auto border-t-2 border-gray-600 rounded-lg shadow-lg my-4' />
+      <hr className='w-3/4 mx-auto border-t-2 border-blue-900 rounded-lg shadow-lg my-4' />
 
 
 
