@@ -17,19 +17,20 @@ const Home = () => {
         {/* <div className='bg-black'> */}
         <BrandsDiscription />
         
-        <div className="items-center justify-center pt-20 pb-20">
+        <div className="items-center justify-center pt-20 pb-14">
           <legend className='text-center' data-wow-delay="100ms">SPECIAL OFFERS</legend>
-
           <Offers />
         </div>
         
-        <div className="items-center justify-center pt-20 pb-20 ">
+        <div className="items-center justify-center pt-20 pb-14 ">
           <legend className='text-center' data-wow-delay="100ms">TRENDING & NEW ARRIVALS</legend>
-
           <Trending />
         </div>
-      
-        {/* <CategorySection /> */}
+
+        <div className="items-center justify-center pt-20 pb-14 text-center">
+          <legend className='text-center' data-wow-delay="100ms">SHOP BY CATEGORY</legend>
+          <CategorySection />
+        </div>
         {/* <ContactModel /> */}
         
         {/* </div> */}

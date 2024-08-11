@@ -3,6 +3,8 @@ import jpeg1 from "../assets/jpeg1.jpg";
 import jpeg3 from "../assets/jpeg3.jpg";
 import jpeg4 from "../assets/jpeg4.jpg";
 import jpeg6 from "../assets/jpeg6.jpg";
+import womens3 from "../assets/womens3.jpg";
+import womens4 from "../assets/womens4.jpg";
 
 const products = [
   {
@@ -21,15 +23,15 @@ const products = [
   },
   {
     id: 3,
-    image: jpeg4,
-    title: "Men's",
+    image: womens3,
+    title: "Women's",
     disciption: "Men's Designer T-Shirt",
     price: "$55.99",
   },
   {
     id: 4,
-    image: jpeg6,
-    title: "Men's",
+    image: womens4,
+    title: "Women's",
     disciption: "Men's Designer T-Shirt",
     price: "$55.99",
   },
