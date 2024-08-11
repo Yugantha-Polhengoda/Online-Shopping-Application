@@ -8,7 +8,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed shadow-custom-shadow top-0 z-[999] w-full backdrop-blur-sm">
+    <header className="fixed shadow-custom-shadow top-0 z-40 w-full backdrop-blur-sm">
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -198,7 +198,7 @@ const Navbar = () => {
                     href="#"
                     className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    <div className="font-semibold">Online Stores</div>
+                    <div className="font-semibold">Brands</div>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
                       Connect with third-party tools that you're already using.
                     </span>
@@ -209,7 +209,7 @@ const Navbar = () => {
                     href="#"
                     className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    <div className="font-semibold">Segmentation</div>
+                    <div className="font-semibold">Online Stores</div>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
                       Connect with third-party tools that you're already using.
                     </span>

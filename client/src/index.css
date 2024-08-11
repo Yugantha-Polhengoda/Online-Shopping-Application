@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Maname&family=Noto+Serif+Khitan+Small+Script&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:wght@200&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap");
 @import url("https://rsms.me/inter/inter.css");
+
 
 @tailwind base;
 @tailwind components;
@@ -90,3 +92,137 @@ input[type="file"] {
 .sketch-picker > div:nth-child(3) {
   display: none !important;
 }
+
+
+.product {
+  /* transform: translate(26%, 30%); */
+  box-shadow: 0 5px 15px rgba(0, 0, 0,.25);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.product .imgbox {
+  height: 100%;
+  box-sizing: border-box;
+  
+}
+
+.product .imgbox img {
+  display: block; 
+  border-radius: 15px;
+}
+
+.details {
+  width: 100%;
+  bottom: -195px;
+  background: transparent;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 rgba( 0, 0, 0, 0);
+  transition: .5s;
+  color: white;
+}
+
+.product:hover .details {
+  bottom: 0px;
+  background: rgba( 255, 255, 255, 0.9);
+  color: black;
+}
+
+.details h2 {
+  margin: 0; 
+  padding: 0; 
+  font-size: 16px;
+  width: 100%;
+}
+
+.details h2 span {
+ font-size: 12px; 
+ /* color: black; */
+ font-weight: normal;
+}
+
+.details .price {
+  position:absolute;
+  top: 0;
+  right: 20px;
+  font-weight: bold;
+  font-size: 20px; 
+}
+
+/* .label {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.UL {
+  display: flex;
+  margin: 0;
+  padding: 0;
+} 
+
+.colors {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.UL li {
+  list-style: none;
+  margin: 5px 5px 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.UL li:first-child {
+  margin-left: 0;
+}
+
+.colors li {
+  list-style: none;
+  margin: 5px 5px 0;
+  font-size: 12px;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+}
+
+.colors li:nth-child(1) {
+  background: #ff0;
+}
+
+.colors li:nth-child(2) {
+  background: #f00;
+}
+
+.colors li:nth-child(3) {
+  background: #f0f;
+}
+
+.colors li:nth-child(4) {
+  background: #0ff;
+}
+
+.colors li:nth-child(5) {
+  background: #00f;
+}
+
+.card-button {
+  display: block;
+  padding: 5px;
+  color: #fff;
+  margin: 15px 0 0;
+  background: #50e3c2;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.card-button:hover {
+  color: #fff;
+  background: #ff209a;
+} */

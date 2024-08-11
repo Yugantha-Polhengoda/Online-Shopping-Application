@@ -35,7 +35,7 @@ const products = [
   },
 ];
 
-const Offers = () => (
+const Testing = () => (
     <div className="flex flex-wrap gap-4 p-4">
       {products.map(product => (
         <Card key={product.id} product={product} />
@@ -54,22 +54,22 @@ const Card = ({ product }) => (
       <div className="price text-lg mt-2">{product.price}</div>
       <label className='block mt-4 font-bold'>Sizes</label>
       <ul className='flex space-x-2 list-none p-0 m-0'>
-        <li className='bg-gray-300 rounded px-2 py-1 hover:bg-gray-400 cursor-pointer'>S</li>
-        <li className='bg-gray-300 rounded px-2 py-1 hover:bg-gray-400 cursor-pointer'>M</li>
-        <li className='bg-gray-300 rounded px-2 py-1 hover:bg-gray-400 cursor-pointer'>L</li>
-        <li className='bg-gray-300 rounded px-2 py-1 hover:bg-gray-400 cursor-pointer'>XL</li>
+        <li className='bg-gray-200 rounded px-2 py-1'>S</li>
+        <li className='bg-gray-200 rounded px-2 py-1'>M</li>
+        <li className='bg-gray-200 rounded px-2 py-1'>L</li>
+        <li className='bg-gray-200 rounded px-2 py-1'>XL</li>
       </ul>
       <label className='block mt-4 font-bold'>Color</label>
       <ul className='flex space-x-2 list-none p-0 m-0'>
-        <li className='w-6 h-6 rounded-full cursor-pointer bg-yellow-500 hover:bg-yellow-600'></li>
-        <li className='w-6 h-6 rounded-full cursor-pointer bg-red-500 hover:bg-red-600'></li>
-        <li className='w-6 h-6 rounded-full cursor-pointer bg-purple-500 hover:bg-purple-600'></li>
-        <li className='w-6 h-6 rounded-full cursor-pointer bg-teal-500 hover:bg-teal-600'></li>
-        <li className='w-6 h-6 rounded-full cursor-pointer bg-blue-500 hover:bg-blue-600'></li>
+        <li className='w-6 h-6 rounded-full bg-yellow-500'></li>
+        <li className='w-6 h-6 rounded-full bg-red-500'></li>
+        <li className='w-6 h-6 rounded-full bg-purple-500'></li>
+        <li className='w-6 h-6 rounded-full bg-teal-500'></li>
+        <li className='w-6 h-6 rounded-full bg-blue-500'></li>
       </ul>
       <a href='#' className='block mt-4 bg-blue-500 text-white text-center py-2 rounded hover:bg-blue-600'>Add To Cart</a>
     </div>
   </div>
 );
 
-export default Offers;
+export default Testing;
