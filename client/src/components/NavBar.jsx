@@ -6,10 +6,15 @@ import shoppingBag from "../assets/shoppingBag.png";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(1); // Example count, replace with actual count from your app state
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false); // State for profile menu
+  const [cartCount, setCartCount] = useState(0); // Example count, replace with actual count from your app state
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const toggleProfileMenu = () => {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
   };
 
   return (
@@ -94,31 +99,38 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center ml-2 mr-1 md:ml-5 lg:ml-8 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-              <button type="button" className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                <span className="sr-only">Open user menu</span>
+              <button
+                type="button"
+                onClick={toggleProfileMenu} // Toggle profile menu on click
+                className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+              >
+                <span className="sr-only">Open profile menu</span>
                 <img className="w-5 h-5 lg:w-10 lg:h-10 2xl:w-8 2xl:h-8 rounded-full" src={Adobe6} alt="Adobe icon"/>
               </button>
-              
-              <div className="absolute hidden z-50 lg:right-2 2xl:right-16 top-20 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-                <div className="px-4 py-3">
-                  <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-                  <span className="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+
+              {/* Profile Menu */}
+              {isProfileMenuOpen && (
+                <div className="absolute z-50 right-16 top-20 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+                  <div className="px-4 py-3">
+                    <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                    <span className="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                  </div>
+                  <ul className="py-2" aria-labelledby="user-menu-button">
+                    <li>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+                    </li>
+                    <li>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                    </li>
+                    <li>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+                    </li>
+                    <li>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                    </li>
+                  </ul>
                 </div>
-                <ul className="py-2" aria-labelledby="user-menu-button">
-                  <li>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-                  </li>
-                  <li>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-                  </li>
-                  <li>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-                  </li>
-                  <li>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-                  </li>
-                </ul>
-              </div>
+              )}
             </div>
 
             {/* Dropdown Button */}
@@ -129,7 +141,6 @@ const Navbar = () => {
               aria-controls="navbar-search"
               aria-expanded="false"
             >
-              <span className="sr-only">Open main menu</span>
               <svg
                 className="w-5 h-5"
                 aria-hidden="true"
