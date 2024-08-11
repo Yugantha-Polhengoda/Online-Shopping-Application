@@ -47,7 +47,7 @@ const Trending = () => (
 
 
 const Card = ({ product }) => (
-  <div className="product bg-slate-500 w-80 h-96 relative rounded-lg shadow-lg overflow-hidden m-9 md:m-5 lg:m-0 xl:m-2.5 2xl:ml-6">
+  <div className="product bg-slate-500 w-80 h-96 relative rounded-lg shadow-lg overflow-hidden m-9 md:m-5 lg:m-0 lg:w-58 xl:m-2.5 xl:w-80 2xl:ml-6">
     <div className="imgbox h-3/5">
       <img src={product.image} alt={product.title} className="w-full h-full object-cover rounded-t-lg" />
     </div>
