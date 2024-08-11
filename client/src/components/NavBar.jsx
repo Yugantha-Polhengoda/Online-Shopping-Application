@@ -112,8 +112,8 @@ const Navbar = () => {
               {isProfileMenuOpen && (
                 <div className="absolute z-50 right-16 top-20 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
                   <div className="px-4 py-3">
-                    <span className="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-                    <span className="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                    <span className="block text-sm text-gray-900 dark:text-white">Yugantha Polhengoda</span>
+                    <span className="block text-xs text-gray-500 truncate dark:text-gray-400">yuganthapolhengoda@gmail.com</span>
                   </div>
                   <ul className="py-2" aria-labelledby="user-menu-button">
                     <li>
