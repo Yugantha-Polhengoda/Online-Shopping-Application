@@ -30,7 +30,7 @@ html {
 }
 
 .head-text {
-  @apply xl:text-[6rem] text-[6rem] xl:leading-[8rem] leading-[11rem] font-black text-gray-600;
+  @apply xl:text-[6rem] text-[3rem] xl:leading-[8rem] leading-[4rem] mt-16 xl:mt-0 font-black text-gray-600;
 }
 
 .download-btn {

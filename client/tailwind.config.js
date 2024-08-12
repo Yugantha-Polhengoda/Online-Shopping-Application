@@ -26,6 +26,9 @@ export default {
         '2.5' : '10px',
         '58' : '235px',
       },
+      height: {
+        '22' : '87px',
+      },
     },
   },
   plugins: [],

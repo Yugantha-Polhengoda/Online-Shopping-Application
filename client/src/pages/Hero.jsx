@@ -27,7 +27,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.div {...headContentAnimation} className=''>
-                    <p className='max-w-md mb-2 mt-20 font-normal text-gray-600'>
+                    <p className='max-w-md mb-2 xl:mt-20 font-normal text-gray-600'>
                         Design your own Dress and  <strong> ORDER IT. </strong>
                     </p>
 
