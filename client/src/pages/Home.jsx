@@ -8,21 +8,26 @@ import BrandsDiscription from '../components/BrandsDiscription'
 import ContactModel from '../components/ContactModel'
 import CategorySection from '../components/CategorySection'
 import Testing from '../components/Testing'
+import ServiceCards from '../components/ServiceCards'
+import Banners from '../components/Banners'
 
 const Home = () => {
   return (
     <div className=''>
         <NavBar />
         <ShirtCustomizer />
-        {/* <div className='bg-black'> */}
-        <BrandsDiscription />
+        {/* <div className='bg-slate-900'> */}
         
-        <div className="items-center justify-center pt-20 pb-14">
+        <BrandsDiscription />
+
+        
+        
+        <div className="items-center justify-center pt-20 pb-14 px-8">
           <legend className='text-center' data-wow-delay="100ms">SPECIAL OFFERS</legend>
           <Offers />
         </div>
         
-        <div className="items-center justify-center pt-20 pb-14 ">
+        <div className="items-center justify-center pt-20 pb-14 px-8">
           <legend className='text-center' data-wow-delay="100ms">TRENDING & NEW ARRIVALS</legend>
           <Trending />
         </div>
@@ -32,7 +37,11 @@ const Home = () => {
           <CategorySection />
         </div>
         {/* <ContactModel /> */}
-        
+
+        {/* <div className='px-80 py-20 '>
+          <Banners />
+        </div> */}
+
         {/* </div> */}
         <Footer />
     </div>
