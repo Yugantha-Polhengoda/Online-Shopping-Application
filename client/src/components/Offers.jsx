@@ -1,8 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
+import { Navigation, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
 import jpeg1 from "../assets/jpeg1.jpg";
 import jpeg3 from "../assets/jpeg3.jpg";
@@ -71,8 +72,13 @@ const products = [
 const Offers = () => (
   <div className="p-0 xl:p-4">
     <Swiper
-      modules={[Navigation]}
+      modules={[Navigation, Autoplay]} // Include Autoplay module
       navigation
+      autoplay={{ 
+        delay: 2000, 
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true, // Pause autoplay when hovering over the slider
+      }} 
       pagination={{ clickable: true }}
       spaceBetween={16}
       slidesPerView={2}
@@ -121,6 +127,7 @@ const Card = ({ product }) => (
 );
 
 export default Offers;
+
 
 
 

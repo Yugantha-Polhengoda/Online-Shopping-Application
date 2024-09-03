@@ -8,21 +8,21 @@ const LatestCollections = () => {
     const [latestProducts, setLatestProducts] = useState([])
 
     useEffect(() => {
-      setLatestProducts(products.slice(0,10));
+      setLatestProducts(products.slice(0,12));
     },[])
 
     console.log(products);
     
   return (
     <div>
-      <div className='my-10 mx-3 sm:mx-10'>
+      <div className='my-10 mx-3 md:mx-20 lg:mx-24 xl:mx-36'>
         <div className='text-center py-8 text-2xl'>
           <h1 className='text-gray-600'>Latest Collections</h1>
           <p className='text-gray-600 m-auto w-3/4 text-xs sm:text-sm md:text-base'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
         </div>
 
        
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4 gap-y-6'>
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-3 sm:gap-4 gap-y-6'>
         {
           latestProducts.map((item, index) => (
             // <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price}/>
