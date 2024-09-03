@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Maname&family=Noto+Serif+Khitan+Small+Script&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:wght@200&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap");
 @import url("https://rsms.me/inter/inter.css");
@@ -6,6 +8,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* *{
+  font-family: Outfit ;
+} */
+
+/* .swiper-button-next,
+.swiper-button-prev {
+  color: #000; 
+  background-color: rgba(255, 255, 255, 0.7); 
+  border-radius: 50px;
+  padding: 30px;
+} */
+
+/* Customize arrow hover state */
+/* .swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50px;
+  padding: 30px;
+} */
+
+.mySwiperArrows .swiper-button-prev {
+  color: blue; /* Example: Change arrow color */
+  background-color: rgba(255, 255, 255, 0.8); /* Example: Semi-transparent background */
+  border-radius: 50%;
+  padding: 30px;
+  width: 30px;
+  height: 30px;
+  top: 45%; /* Center vertically */
+  transform: translateX(-48%);
+}
+
+.mySwiperArrows .swiper-button-next {
+  color: blue; /* Example: Change arrow color */
+  background-color: rgba(255, 255, 255, 0.8); /* Example: Semi-transparent background */
+  border-radius: 50%;
+  padding: 30px;
+  width: 30px;
+  height: 30px;
+  top: 45%; /* Center vertically */
+  transform: translateX(22%);
+}
+
+
+
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 html {
   font-family: "Inter", sans-serif;
@@ -136,7 +190,6 @@ input[type="file"] {
 
 .details h2 span {
  font-size: 12px; 
- /* color: black; */
  font-weight: normal;
 }
 
@@ -146,6 +199,67 @@ input[type="file"] {
   right: 20px;
   font-weight: bold;
   font-size: 20px; 
+}
+
+
+
+
+
+
+
+.LatestProduct {
+  /* transform: translate(26%, 30%); */
+  border-radius: 15px;
+}
+
+.LatestProduct .imgbox {
+  height: 100%;
+  box-sizing: border-box;
+  
+}
+
+.LatestProduct .imgbox img {
+  display: block; 
+  border-radius: 15px;
+}
+
+.Latestdetails {
+  width: 100%;
+  /* bottom: -195px; */
+  /* background: transparent; */
+  /* background: rgba( 0, 0, 0, 0.9); */
+  /* padding: 10px; */
+  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 0 0 0 rgba( 0, 0, 0, 0);
+  transition: .5s;
+  color: white;
+}
+
+.LatestProduct:hover .Latestdetails {
+  bottom: 0px;
+  background: rgba( 255, 255, 255, 0.9);
+  color: black;
+}
+
+.Latestdetails h2 {
+  margin: 0; 
+  padding: 0; 
+  /* font-size: 16px; */
+  width: 100%;
+}
+
+.Latestdetails h2 span {
+ /* font-size: 12px;  */
+ /* color: black; */
+ font-weight: normal;
+}
+
+.Latestdetails .Latestprice {
+  position:absolute;
+  top: 0;
+  font-weight: bold;
+  /* font-size: 20px;  */
 }
 
 /* .label {

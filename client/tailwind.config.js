@@ -16,6 +16,12 @@ export default {
         'Playfair-font': ["Playfair Display", "monospace"],
         'NotoSerif-font': ["Noto Serif Khitan Small Script", "serif"],
       },
+      fontSize: {
+        'custom-Ss': '5px',
+        'custom-Sx': '12px',
+        'custom-xs': '10px',
+        'custom-sm': '16px',
+      },
       boxShadow: {
         'custom-shadow': '0 .3rem .1rem rgba(0, 0, 0, .2)',
       },
