@@ -8,19 +8,26 @@ import Cart from "./pages/Cart"
 import Product from "./pages/Product"
 import Navbar from "./components/NavBar"
 import Footer from "./components/Footer"
+import Collection from "./pages/Collection"
+import ScrollToTop from "./components/ScrollToTop"
+import SearchBar from "./components/SearchBar"
 
 
 function App() {
 
   return (
     <main>
+      <ScrollToTop />
       <Navbar />
+      <SearchBar />
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/product/:productId" element={<Product/>} />
+        <Route path="/collection" element={<Collection/>} />
       </Routes>
+      <Footer />
     </main>
   )
 }

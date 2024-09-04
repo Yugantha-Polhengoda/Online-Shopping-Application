@@ -11,6 +11,7 @@ import Testing from '../components/Testing'
 import ServiceCards from '../components/ServiceCards'
 import Banners from '../components/Banners'
 import LatestCollections from '../components/LatestCollections'
+import NewsletterBox from '../components/NewsletterBox'
 
 const Home = () => {
   return (
@@ -49,6 +50,10 @@ const Home = () => {
           <CategorySection />
         </div>
 
+        <div>
+          <NewsletterBox />
+        </div>
+
         {/* <ContactModel /> */}
 
         {/* <div className='px-80 py-20 '>
@@ -56,7 +61,6 @@ const Home = () => {
         </div> */}
 
         {/* </div> */}
-        <Footer />
     </div>
   )
 }

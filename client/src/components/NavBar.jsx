@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Adobe6 from "../assets/Adobe6.png";
+import DressZone from "../assets/DressZone.png";
 import favourite from "../assets/favourite.png";
 import shoppingBag from "../assets/shoppingBag.png";
+import cross_icon from '../assets/cross_icon.png'
 import logo from "../assets/LOGO.png"
+import SearchBar from './SearchBar';
+import { ShopContext } from '../context/ShopContext';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false); // State for profile menu
   const [cartCount, setCartCount] = useState(0); // Example count, replace with actual count from your app state
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const { search, setSearch, showSearch, setShowSearch} = useContext(ShopContext);
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -19,12 +27,32 @@ const Navbar = () => {
     setIsProfileMenuOpen(!isProfileMenuOpen);
   };
 
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+ 
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="fixed shadow-custom-shadow top-0 z-40 w-full backdrop-blur-sm">
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="/" className="flex items-center space-x-1 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 lg:h-8 2xl:h-8" alt="Flowbite Logo" />
+            {/* <img src={DressZone} className="h-6 lg:h-8 2xl:h-9" alt="Logo" /> */}
             <span className="self-center lg:text-2xl 2xl:text-2xl font-medium whitespace-nowrap text-gray-500">Dress<strong className='text-black'>Zone</strong></span>
           </a>
           <div className="flex md:order-2">
@@ -34,8 +62,10 @@ const Navbar = () => {
               data-collapse-toggle="navbar-search"
               aria-controls="navbar-search"
               aria-expanded="false"
-              className="xl:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-2"
+              onClick={()=>setShowSearch(true)}
+              className="lg:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-2"
             >
+              <NavLink to='/collection'>
               <svg
                 className="w-5 h-5"
                 aria-hidden="false"
@@ -51,10 +81,15 @@ const Navbar = () => {
                   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                 />
               </svg>
+              </NavLink>
               <span className="sr-only">Search</span>
             </button>
+
+            <div className='hidden lg:block'>
+              <SearchBar />
+            </div>
             
-            <div className="relative hidden xl:block">
+            {/* <div className="relative hidden lg:flex">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                 <svg
                   className="w-4 h-4 text-gray-500 dark:text-gray-400"
@@ -75,11 +110,14 @@ const Navbar = () => {
               </div>
               <input
                 type="text"
-                id="search-navbar"
-                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                // id="search-navbar"
+                className="block w-full p-2 ps-10 pe-8 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
+                value={search}
+                onChange={(e)=>setSearch(e.target.value)}
               />
-            </div>
+              <img onClick={()=>setShowSearch(false)} className=' w-3 h-3 -mx-6 my-4 cursor-pointer' src={cross_icon} alt=''/>
+            </div> */}
 
             <div className="flex items-center mt-1 lg:ml-8 2xl:ml-14 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
               <button type="button" className="flex text-sm md:me-0 focus:ring-1 rounded-full focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
@@ -227,77 +265,84 @@ const Navbar = () => {
             <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-gray-900 dark:text-white sm:grid-cols-2 md:px-6">
               <ul>
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/collection"
                     className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                    onClick={handleLinkClick}
+                  >
+                    <div className="font-semibold">Collections</div>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      Connect with third-party tools that you're already using.
+                    </span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/kids-clothing"
+                    className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                    onClick={handleLinkClick}
                   >
                     <div className="font-semibold">Kid's Clothings</div>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      Connect with third-party tools that you're already using.
+                      Explore our wide range of kids' clothing.
                     </span>
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/mens-clothing"
                     className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                    onClick={handleLinkClick}
                   >
                     <div className="font-semibold">Men's Clothings</div>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      Connect with third-party tools that you're already using.
+                      Browse our latest men's fashion.
                     </span>
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/womens-clothing"
                     className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                    onClick={handleLinkClick}
                   >
                     <div className="font-semibold">Women's Clothings</div>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      Connect with third-party tools that you're already using.
+                      Discover the latest trends in women's clothing.
                     </span>
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
               <ul>
                 <li>
-                  <a
-                    href="#"
+                  <NavLink
+                    to="/best-sellers"
                     className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                    onClick={handleLinkClick}
+                  >
+                    <div className="font-semibold">Best Sellers</div>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      Check out our best-selling products.
+                    </span>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/brands"
+                    className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                    onClick={handleLinkClick}
                   >
                     <div className="font-semibold">Brands</div>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      Connect with third-party tools that you're already using.
+                      Explore products from top brands.
                     </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-                  >
-                    <div className="font-semibold">Online Stores</div>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      Connect with third-party tools that you're already using.
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
-                  >
-                    <div className="font-semibold">Marketing CRM</div>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      Connect with third-party tools that you're already using.
-                    </span>
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
           </div>
         )}
+
       </nav>
     </header>
   );
