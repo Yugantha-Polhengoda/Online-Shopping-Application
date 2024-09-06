@@ -4,23 +4,24 @@ import { CustomButton } from '../components'
 
 const FilePicker = ({ file, setFile, readFile }) => {
   return (
-    <div className='filepicker-container'>
-      <div className='flex-1 flex flex-col'>
+    <div className='filepicker-container p-6 bg-white shadow-lg rounded-lg'>
+      <div className='flex flex-col items-center mt-4'>
         <input 
           id="file-upload"
           type="file"
           accept="image/*"
           onChange={(e) => setFile(e.target.files[0])}
+          className='hidden'
         />
-        <label htmlFor="file-upload" className='filepicker-label'>
+        <label htmlFor="file-upload" className='filepicker-label cursor-pointer text-white py-2 px-4 rounded-lg'>
           Upload File
         </label>
-        <p className='mt-2 text-gray-500 text-xs truncate'>
+        <p className='mt-2 text-gray-500 text-sm truncate'>
           {file === '' ? "No File Selected" : file.name}
         </p>
       </div>
 
-      <div className='mt-4 flex flex-wrap gap-3'>
+      <div className='mt-20 flex gap-3'>
         <CustomButton 
           type="outline"
           title="Logo"
@@ -30,7 +31,7 @@ const FilePicker = ({ file, setFile, readFile }) => {
 
         <CustomButton 
           type="filled"
-          title="full"
+          title="Full"
           handleClick={() => readFile('full')}
           CustomStyle="text-xs"
         />

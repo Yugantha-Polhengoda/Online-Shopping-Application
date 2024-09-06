@@ -24,8 +24,8 @@ const SearchBar = () => {
     <div>
     {
     showSearch && visible ? (
-    <div className='flex lg:hidden justify-end right-0 text-center mt-20 lg:mt-0 py-2'>
-      <div className='items-center justtify-center border border-gray-400 px-4 rounded-full'>
+    <div className='fixed z-[999] flex lg:hidden justify-end right-0 text-center mt-20 lg:mt-0 py-2'>
+      <div className='items-center justtify-center border bg-white border-gray-400 px-4 rounded-full'>
         <input value={search} onChange={(e)=>setSearch(e.target.value)} className='flex-1 outline-none bg-inherit text-sm mx-6 my-2.5' type="text" placeholder='Search'/>
         <img className='w-4 -mt-7' src={search_icon} alt='' />
       </div>
