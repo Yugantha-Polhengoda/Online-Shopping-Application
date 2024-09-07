@@ -103,7 +103,7 @@ const Card = ({ product }) => (
     <div className="imgbox h-3/5">
       <img src={product.image} alt={product.title} className="w-full h-full object-cover rounded-t-lg" />
     </div>
-    <div className="Latestdetails px-2 py-2 lg:px-3 lg:py-3 bg-gray-700 bottom-[-135px] lg:bottom-[-195px] absolute w-full bg-opacity-90 p-4">
+    <div className="Latestdetails px-2 py-2 lg:px-3 lg:py-3 bottom-[-135px] lg:bottom-[-195px] absolute w-full bg-opacity-90 p-4">
       <h2 className="text-custom-xs lg:text-sm font-semibold">{product.title}<br/><span>{product.description}</span></h2>
       <div className="Latestprice right-[8px] lg:right-[20px] text-custom-Sx lg:text-lg mt-2">{product.price}</div>
       <label className="block mt-1 lg:mt-4 font-bold">Sizes</label>

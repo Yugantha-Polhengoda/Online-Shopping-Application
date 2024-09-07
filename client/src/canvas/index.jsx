@@ -13,6 +13,9 @@ const CanvasModel = () => {
       gl={{ preserveDrawingBuffer: true }}
       className="w-full max-w-full h-full transition-all ease-in"
     >
+      {/* Set the background color of the canvas */}
+      <color attach="background" args={['#566573']} /> {/* Adjust this color to your preference */}
+      
       <ambientLight intensity={0.5}/>
       <Environment preset="city"/>
 

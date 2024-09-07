@@ -22,12 +22,12 @@ const Hero = () => {
           
             <motion.div className='home-content' {...headContainerAnimation}>
                 <motion.div {...headTextAnimation}>
-                    <h1 className='head-text'><span className='text-black'>CUSTOMIZE</span> <br className='xl:block hidden'/> YOUR OWN. </h1>
+                    <h1 className='head-text'><span className='text-slate-300'>CUSTOMIZE</span> <br className='xl:block hidden'/> YOUR OWN. </h1>
                 </motion.div>
             </motion.div>
 
             <motion.div {...headContentAnimation} className=''>
-                    <p className='max-w-md mb-2 xl:mt-20 font-normal text-gray-600'>
+                    <p className='max-w-md mb-2 xl:mt-20 font-normal text-gray-400'>
                         Design your own Dress and  <strong> ORDER IT. </strong>
                     </p>
 

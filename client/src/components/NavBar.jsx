@@ -16,7 +16,7 @@ const Navbar = () => {
   const [cartCount, setCartCount] = useState(0); // Example count, replace with actual count from your app state
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const { search, setSearch, showSearch, setShowSearch} = useContext(ShopContext);
+  const { search, setSearch, showSearch, setShowSearch, getCartCount} = useContext(ShopContext);
 
 
   const toggleDropdown = () => {
@@ -126,16 +126,18 @@ useEffect(() => {
               </button>
             </div>
 
+          {/*--------- Cart --------*/}
+
             <div className="relative flex items-center ml-1 md:ml-1 lg:ml-3 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-              <button type="button" className="flex text-sm md:me-0 focus:ring-1 rounded-full focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                <span className="sr-only">Open user menu</span>
-                <img className="w-6 h-6 lg:w-7 lg:h-7 2xl:w-8 2xl:h-8" src={shoppingBag} alt="shopping bag icon"/>
-                {cartCount > -1 && (
-                  <span className="absolute top-2 left-5 2xl:left-7 inline-flex items-center justify-center w-4 h-4 text-xs font-medium text-white bg-red-500 border-2 border-white rounded-full -translate-x-1/2 -translate-y-1/2">
-                    {cartCount}
-                  </span>
-                )}
-              </button>
+              <NavLink to="/cart">
+                <button type="button" className="flex text-sm md:me-0 focus:ring-1 rounded-full focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                  <span className="sr-only">Open user menu</span>
+                  <img className="w-6 h-6 lg:w-7 lg:h-7 2xl:w-8 2xl:h-8" src={shoppingBag} alt="shopping bag icon"/>
+                    <span className="absolute top-2 left-5 2xl:left-7 inline-flex items-center justify-center w-4 h-4 text-xs font-medium text-white bg-red-500 border-2 border-white rounded-full -translate-x-1/2 -translate-y-1/2">
+                      {getCartCount()}
+                    </span>
+                </button>
+              </NavLink>
             </div>
 
             <div className="flex items-center ml-3 mr-1 md:ml-5 lg:ml-8 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">

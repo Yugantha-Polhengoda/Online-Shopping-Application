@@ -78,7 +78,7 @@ const Collection = () => {
   }, [sortType]);
 
   return (
-    <div className="flex flex-col sm:flex-row mx-10 gap-1 sm:gap-10 pt-28 pb-40 border-t">
+    <div className="flex flex-col sm:flex-row mx-2.5 md:mx-10 gap-1 sm:gap-10 pt-36 lg:pt-28 pb-40 border-t">
       {/* Filter Options */}
       <div className="min-w-60">
         <p
@@ -172,7 +172,7 @@ const Collection = () => {
       {/* Right Side */}
       <div className="flex-1">
         <div className="flex justify-between text-base sm:text-2xl gap-4 mb-4">
-          <h2>ALL COLLECTIONS</h2>
+          <h2 className="">ALL COLLECTIONS</h2>
           {/* Product Sort */}
           <select
             onChange={(e) => setSortType(e.target.value)}
@@ -185,12 +185,12 @@ const Collection = () => {
         </div>
 
         {/* Map Products */}
-        <div className="grid grid-col-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 gap-y-6 md:gap-5">
           {filterProducts.map((item, index) => (
             <div
               key={index}
               id={item._id}
-              className="LatestProduct bg-slate-500 w-full h-80  md:h-60  lg:h-80 xl:h-[350px] mt-3 relative rounded-lg overflow-hidden"
+              className="LatestProduct  bg-slate-500 w-full h-52  md:h-60  lg:h-80 xl:h-[350px] mt-3 relative rounded-lg overflow-hidden"
             >
               <NavLink to={`/product/${item._id}`}>
                 <div className="imgbox h-3/5">
@@ -202,33 +202,33 @@ const Collection = () => {
                 </div>
               </NavLink>
 
-              <div className="Latestdetails px-4 py-2 lg:px-3 lg:py-3 bg-gray-700 bottom-[-125px] lg:bottom-[-170px] absolute bg-opacity-90">
+              <div className="Latestdetails px-1.5 md:px-4 lg:px-2 xl:px-5 py-2 lg:py-2  bottom-[-98px] lg:bottom-[-165px] absolute bg-opacity-90">
                 <div className="flex justify-between">
-                  <div className="w-24 md:w-24 lg:w-36 ">
+                  <div className="w-24 md:w-24 lg:w-[130px] xl:w-36 ">
                     <h2 className="text-custom-xs lg:text-sm font-semibold">
                       {item.name}
                     </h2>
                   </div>
-                  <div className="Latestprice right-[10px] lg:right-[20px] text-custom-Sx lg:text-lg mt-2">
-                    $ {item.price}
+                  <div className="Latestprice md:font-medium right-[6px] md:right-[18px] lg:right-[14px] text-custom-Sx lg:text-lg mt-2">
+                    ${item.price}
                   </div>
                 </div>
-                <label className="block mt-1 lg:mt-2 font-bold">Sizes</label>
+                <label className="block mt-1 lg:mt-2 text-custom-xs lg:text-sm font-medium">Available Sizes:</label>
                 <ul className="flex space-x-2 list-none p-0 m-0">
-                  <li className="bg-gray-300 rounded px-1 lg:px-2 lg:py-1 hover:bg-gray-400 cursor-pointer text-sm lg:text-base">
+                  <li className="bg-gray-300 rounded pt-0.5 px-1 lg:px-2 lg:py-1 hover:bg-gray-400 cursor-pointer text-custom-xs lg:text-base">
                     S
                   </li>
-                  <li className="bg-gray-300 rounded px-1 lg:px-2 lg:py-1 hover:bg-gray-400 cursor-pointer text-sm lg:text-base">
+                  <li className="bg-gray-300 rounded pt-0.5 px-1 lg:px-2 lg:py-1 hover:bg-gray-400 cursor-pointer text-custom-xs lg:text-base">
                     M
                   </li>
-                  <li className="bg-gray-300 rounded px-1 lg:px-2 lg:py-1 hover:bg-gray-400 cursor-pointer text-sm lg:text-base">
+                  <li className="bg-gray-300 rounded pt-0.5 px-1 lg:px-2 lg:py-1 hover:bg-gray-400 cursor-pointer text-custom-xs lg:text-base">
                     L
                   </li>
-                  <li className="bg-gray-300 rounded px-1 lg:px-2 lg:py-1 hover:bg-gray-400 cursor-pointer text-sm lg:text-base">
+                  <li className="bg-gray-300 rounded pt-0.5 px-1 lg:px-2 lg:py-1 hover:bg-gray-400 cursor-pointer text-custom-xs lg:text-base">
                     XL
                   </li>
                 </ul>
-                <label className="block mt-1 lg:mt-2 font-bold">Color</label>
+                <label className="block mt-1 lg:mt-2 text-custom-xs lg:text-sm font-medium">Available Colors:</label>
                 <ul className="flex space-x-2 list-none p-0 m-0">
                   <li className="w-3 h-3 lg:w-6 lg:h-6 rounded-full cursor-pointer bg-yellow-500 hover:bg-yellow-600"></li>
                   <li className="w-3 h-3 lg:w-6 lg:h-6 rounded-full cursor-pointer bg-red-500 hover:bg-red-600"></li>
@@ -237,12 +237,16 @@ const Collection = () => {
                   <li className="w-3 h-3 lg:w-6 lg:h-6 rounded-full cursor-pointer bg-blue-500 hover:bg-blue-600"></li>
                 </ul>
 
-                <a
+                <NavLink to={`/product/${item._id}`}>
+                <a href="" className="block mt-2 lg:mt-4 bg-blue-500 text-white text-center text-custom-Sx lg:text-lg py-0.5 lg:py-1 rounded hover:bg-blue-600">Veiw</a>
+                </NavLink>
+
+                {/* <a
                   href="#"
                   className="block z-40 mt-2 lg:mt-3 bg-blue-500 text-white text-center text-custom-Sx lg:text-lg py-1 lg:py-0.5 rounded hover:bg-blue-600"
                 >
                   Add To Cart
-                </a>
+                </a> */}
               </div>
             </div>
           ))}

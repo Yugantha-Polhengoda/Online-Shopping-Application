@@ -94,7 +94,7 @@ html {
 }
 
 .head-text {
-  @apply xl:text-[6rem] text-[3rem] xl:leading-[8rem] leading-[4rem] mt-16 xl:mt-0 font-black text-gray-600;
+  @apply xl:text-[6rem] text-[3rem] xl:leading-[8rem] leading-[4rem] mt-16 xl:mt-0 font-black text-gray-500;
 }
 
 .download-btn {
@@ -244,12 +244,15 @@ input[type="file"] {
   box-shadow: 0 0 0 rgba( 0, 0, 0, 0);
   transition: .5s;
   color: white;
+  /* text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue; */
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
 }
 
 .LatestProduct:hover .Latestdetails {
   bottom: 0px;
   background: rgba( 255, 255, 255, 0.9);
   color: black;
+  text-shadow: none;
 }
 
 .Latestdetails h2 {
@@ -268,7 +271,6 @@ input[type="file"] {
 .Latestdetails .Latestprice {
   position:absolute;
   top: 0;
-  font-weight: bold;
   /* font-size: 20px;  */
 }
 
@@ -371,4 +373,16 @@ input[type="file"] {
 /*********************************************/
 .border-shadow {
   box-shadow: 1px 1px 5px blue;
+}
+
+.image-box {
+    box-shadow:inset 0px 0px 0px 2px #f00;
+}
+
+.shadow_inner {
+  box-shadow:inset 0px 0px 6px 0.01px #ccc ;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }

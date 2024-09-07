@@ -31,7 +31,7 @@ const RelatedProducts = ({category, subCategory}) => {
 
       <div className="p-4">
         <Swiper
-          spaceBetween={20}
+          spaceBetween={14}
           slidesPerView={2}
           breakpoints={{
             640: {
@@ -43,6 +43,9 @@ const RelatedProducts = ({category, subCategory}) => {
             1024: {
               slidesPerView: 4,
             },
+            1280: {
+                slidesPerView: 5,
+              },
           }}
           pagination={{ clickable: true }}
           navigation
@@ -57,12 +60,12 @@ const RelatedProducts = ({category, subCategory}) => {
                 <img src={item.image} alt={item.name} className="w-full h-full object-cover rounded-t-lg" />
               </div>
 
-              <div className="Latestdetails px-2 py-2 lg:px-3 lg:py-3 bg-gray-700 bottom-[-135px] lg:bottom-[-195px] absolute bg-opacity-90">
+              <div className="Latestdetails px-2 py-2 lg:px-3 lg:py-3 bottom-[-135px] lg:bottom-[-195px] absolute bg-opacity-90">
               <div className='flex justify-between'>
                 <div className='w-24 md:w-24 lg:w-36 '>
                   <h2 className="text-custom-xs lg:text-sm font-semibold">{item.name}</h2>
                 </div>
-                <div className="Latestprice right-[5px] lg:right-[20px] text-custom-Sx lg:text-lg mt-2">$ {item.price}</div>
+                <div className="Latestprice right-[5px] lg:right-[20px] text-custom-Sx lg:text-lg mt-2 md:font-semibold">${item.price}</div>
               </div>
               <label className="block mt-1 lg:mt-4 font-bold">Sizes</label>
                 <ul className="flex space-x-2 list-none p-0 m-0">
