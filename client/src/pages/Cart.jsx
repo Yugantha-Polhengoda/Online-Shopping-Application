@@ -1,9 +1,10 @@
 import React from 'react'
+import Pcard from '../components/Pcard'
 
 const Cart = () => {
   return (
     <div className='pt-20'>
-      <h1>Cart</h1>
+      <Pcard />
     </div>
   )
 }

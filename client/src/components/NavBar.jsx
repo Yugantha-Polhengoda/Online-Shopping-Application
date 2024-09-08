@@ -47,7 +47,7 @@ useEffect(() => {
   };
 
   return (
-    <header className="fixed shadow-custom-shadow top-0 z-40 w-full backdrop-blur-sm">
+    <header className="fixed shadow-custom-shadow top-0 z-[999] w-full backdrop-blur-sm">
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="/" className="flex items-center space-x-1 rtl:space-x-reverse">
