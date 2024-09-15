@@ -1,9 +1,8 @@
-import { Canvas } from "@react-three/fiber"
-import { Environment, Center } from "@react-three/drei"
-
-import Shirt from "./Shirt"
-import Backdrop from "./Backdrop"
-import CameraRig from "./CameraRig"
+import { Canvas } from "@react-three/fiber";
+import { Environment, Center } from "@react-three/drei";
+import Shirt from "./Shirt";
+import Backdrop from "./Backdrop";
+import CameraRig from "./CameraRig";
 
 const CanvasModel = () => {
   return (
@@ -14,11 +13,16 @@ const CanvasModel = () => {
       className="w-full max-w-full h-full transition-all ease-in"
     >
       {/* Set the background color of the canvas */}
-      <color attach="background" args={['#566573']} /> {/* Adjust this color to your preference */}
-      
-      <ambientLight intensity={0.5}/>
-      <Environment preset="city"/>
-
+      <color attach="background" args={["#352d52"]} />{" "}
+      {/* Adjust this color to your preference */}
+      {/* Ambient light */}
+      <ambientLight intensity={0.5} />
+      {/* Use Environment for lighting only */}
+      <Environment
+        background={false}
+        files="/soil1k.hdr" // Your HDRI file
+        preset={null} // Disable any default presets
+      />
       <CameraRig>
         <Backdrop />
         <Center>
@@ -26,7 +30,7 @@ const CanvasModel = () => {
         </Center>
       </CameraRig>
     </Canvas>
-  )
-}
+  );
+};
 
-export default CanvasModel
+export default CanvasModel;

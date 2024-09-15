@@ -151,7 +151,7 @@
 
 //       {/* ------------------- Related Products & Special Offers ------------------- */}
 //       <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
-      
+
 //     </div>
 //   ) : (
 //     <div className='loading'>Loading...</div>
@@ -159,64 +159,6 @@
 // };
 
 // export default TestingPCard;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useContext, useEffect, useState } from 'react';
 // import { useParams } from 'react-router-dom';
@@ -371,7 +313,7 @@
 
 //       {/* ------------------- Related Products & Special Offers ------------------- */}
 //       <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
-      
+
 //     </div>
 //   ) : (
 //     <div className='loading'>Loading...</div>
@@ -379,4 +321,3 @@
 // };
 
 // export default Product;
-

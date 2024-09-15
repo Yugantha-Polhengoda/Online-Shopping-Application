@@ -61,7 +61,7 @@ html {
 }
 
 .home {
-  @apply w-fit xl:h-full flex xl:justify-between justify-start items-start flex-col xl:py-40 xl:px-36 sm:p-8 p-6 max-xl:gap-7 absolute z-10;
+  @apply w-fit xl:h-full flex xl:justify-between justify-start items-start flex-col xl:py-40 xl:px-40 sm:p-8 p-6 max-xl:gap-7 absolute z-10;
 }
 
 .home-content {
@@ -69,7 +69,7 @@ html {
 }
 
 .head-text {
-  @apply xl:text-[6rem] text-[3rem] xl:leading-[8rem] leading-[4rem] mt-16 xl:mt-0 font-black text-gray-500;
+  @apply xl:text-[5.5rem] text-[3rem] xl:leading-[8rem] leading-[4rem] mt-16 xl:mt-0 font-black text-gray-500;
 }
 
 .download-btn {
@@ -883,3 +883,43 @@ input[type=radio] + label {
   font-family: "Roboto", sans-serif;
   text-decoration: none;
 }
+
+.SizeChart__button__rotate {
+  transition: transform 0.5s;
+  transform: rotate(1turn);
+}
+
+.SizeChart__button__rotate_back {
+  transition: transform 0.5s;
+  transform: rotate(-1turn);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------Cart----------------- */

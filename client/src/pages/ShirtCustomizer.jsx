@@ -7,7 +7,7 @@ import Hero from "../pages/Hero"
 
 const ShirtCustomizer = () => {
   return (
-    <div className="app transition-all ease-out">
+    <div className="app transition-all ease-out mt-6">
       <Hero />
       <Canvas />
       <Customizer />
